@@ -15,7 +15,7 @@ db = SQLAlchemy(app)
 migrate = Migrate()
 migrate.init_app(app, db)
 
-
+# Creating student details database
 class student(db.Model):
     Reg_No = db.Column(db.String(20), primary_key=True)
     Name = db.Column(db.String(100), nullable=False)
@@ -36,7 +36,7 @@ class results(db.Model):
     Reg_No = db.Column(db.String(20), db.ForeignKey('student.Reg_No'), nullable=False)
     units = db.relationship('units', backref='results_lookup', lazy=True)
 
-
+# student results database
 class fees(db.Model):
     Reg_No = db.Column(db.String(20), primary_key=True)
     Name = db.Column(db.String(100), db.ForeignKey('student.Name'), nullable=False)

@@ -158,7 +158,7 @@ def get_units():
         "source": "webhookdata"
         }
 
-'''def get_results():
+def get_results():
     query_result = get_request().get('queryResult')
     Reg_no =  query_result.get('parameters').get('reg_no')
     password= query_result.get('parameters').get('password')
@@ -180,7 +180,7 @@ def get_units():
         "source": "webhookdata"
 
     }
-'''
+
 
 def register_units():
     query_result = get_request().get('queryResult')
